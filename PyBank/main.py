@@ -40,13 +40,11 @@ with open(file_path_read,'r') as csv_file:
     
 with open(file_path_write,'w',newline='') as txt_file :
     txt_writer = CSV.writer(txt_file)
-    text_tmp = 'Financial Analysis'
-    txt_writer.writerow([text_tmp])
-    print(text_tmp)
-    text_tmp = '---------------------------------------'
-    txt_writer.writerow([text_tmp])
-    print(text_tmp)
+    text_tmp = '\nFinancial Analysis\n'
+    text_tmp += '---------------------------------------\n'
+
     for i in output_dict:
-        text_tmp = f'{i} : {output_dict[i]}'
-        txt_writer.writerow([text_tmp])
-        print(text_tmp)
+        text_tmp += f'{i} : {output_dict[i]}\n'
+
+    txt_writer.writerow([text_tmp])
+    print(text_tmp)

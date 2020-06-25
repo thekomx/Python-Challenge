@@ -23,30 +23,18 @@ with open(file_path_read,'r') as csv_file:
 
 with open(file_path_write,'w',newline='') as txt_file:
     txt_write = CSV.writer(txt_file)
-    text_temp = 'Election Results'
-    txt_write.writerow([text_temp])
-    print(text_temp)
-    text_temp = '-------------------------'
-    txt_write.writerow([text_temp])
-    print(text_temp)
-    text_temp = f'Total Votes : {voters}'
-    txt_write.writerow([text_temp])
-    print(text_temp)
-    text_temp = '-------------------------'
-    txt_write.writerow([text_temp])
-    print(text_temp)
+
+    text_temp = '\nElection Results\n'
+    text_temp += '-------------------------\n'
+    text_temp += f'Total Votes : {voters}\n'
+    text_temp += '-------------------------\n'
 
     for i in output_dict:
-        text_temp = f'{i} : {(output_dict[i]/voters*100):.3f}% ({output_dict[i]})'
-        txt_write.writerow([text_temp])
-        print(text_temp)    
+        text_temp += f'{i} : {(output_dict[i]/voters*100):.3f}% ({output_dict[i]})\n'
     
-    text_temp = '-------------------------'
-    txt_write.writerow([text_temp])
-    print(text_temp)
-    text_temp = f'Winner : {max(output_dict,key=output_dict.get)}'
-    txt_write.writerow([text_temp])
-    print(text_temp)
-    text_temp = '-------------------------'
+    text_temp += '-------------------------\n'
+    text_temp += f'Winner : {max(output_dict,key=output_dict.get)}\n'
+    text_temp += '-------------------------\n'
+    
     txt_write.writerow([text_temp])
     print(text_temp)
