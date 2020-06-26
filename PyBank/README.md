@@ -1,4 +1,4 @@
-# Profit/Loss Statis Summary
+# Profit/Loss Statistic Summary
 
 ### This "PYTHON" Program summarizes
 ```bash
