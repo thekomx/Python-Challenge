@@ -1,8 +1,8 @@
 import os as OS
 import csv as CSV
 
-file_path_read = OS.path.join('Resources','budget_data.csv')            #Input file
-file_path_write = OS.path.join('analysis','Financial_Analysis.txt')     #Output file
+file_path_read = OS.path.join('Resources','Budget_Data.csv')            #Input file
+file_path_write = OS.path.join('Analysis','Financial_Analysis.txt')     #Output file
 
 # ----- Put output data in Dictionary ------------------------------------------------
 # ----- The item key's name is the output title 

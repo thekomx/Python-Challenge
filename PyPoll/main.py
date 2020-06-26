@@ -1,8 +1,8 @@
 import os as OS
 import csv as CSV
 
-file_path_read = OS.path.join('Resources','election_data.csv')      #Input File
-file_path_write = OS.path.join('analysis','Election_Results.txt')   #Output File
+file_path_read = OS.path.join('Resources','Election_Data.csv')      #Input File
+file_path_write = OS.path.join('Analysis','Election_Results.txt')   #Output File
 
 output_dict = {}    #Dictionary for output
 
