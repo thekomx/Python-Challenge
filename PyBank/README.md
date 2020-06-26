@@ -9,4 +9,9 @@
 - Biggest Loss Month and the Figure
 ```
 
-Program Retrieves data from CSV file
+### Program Output
+```bash
+- Screen Output
+- Text File Output (Financial_Analysis.txt)
+```
+Program Retrieves data from CSV file (Budget_Data.csv)
