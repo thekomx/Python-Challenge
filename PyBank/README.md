@@ -1,6 +1,6 @@
 # Profit/Loss Statis Summary
 
-### This Program summarizes
+### This "PYTHON" Program summarizes
 ```bash
 - Number of Months in the data
 - Total Made
