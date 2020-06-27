@@ -30,12 +30,15 @@ with open(file_path_read,'r') as csv_file:
 
         # -- If this "TRUE" means this is the first row of data,
         # -- Then initialize output dictionary by give them the first row values
-        if output_dict[output_GIP] == '':       
+        if output_dict[output_GIP] == '':
+            first_value = int_value         #For "average of change" formula uses
             greatest_increase = int_value       
             greatest_decrease = int_value
             output_dict[output_GIP] = f'{csv_line[col_month]} (${int_value})'
             output_dict[output_GDP] = f'{csv_line[col_month]} (${int_value})'
         else: 
+            output_dict[output_avg_change] = int_value  #This will store the latest month value for "average of change" formula uses
+            
             # -- If it not the first row 
             # -- change the MAX and MIN values if found new MAX and MIN
             if int_value > greatest_increase :
@@ -44,9 +47,11 @@ with open(file_path_read,'r') as csv_file:
             elif int_value < greatest_decrease :
                 greatest_decrease = int_value
                 output_dict[output_GDP] = f'{csv_line[col_month]} (${int_value})'
+            
     
-    #Calculate average value
-    output_dict[output_avg_change] = int(output_dict[output_total] / output_dict[output_total_month])
+    #Calculate "average of change"
+    #The formula (First_Value - Last_Value)/(Time_Start - Time_End)
+    output_dict[output_avg_change] = f'{((output_dict[output_avg_change] - first_value) / (output_dict[output_total_month] - 1)):.2f}'
     
     
 #Output to text file and display    
