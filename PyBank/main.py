@@ -50,7 +50,7 @@ with open(file_path_read,'r') as csv_file:
             
     
     #Calculate "average of change"
-    #The formula (First_Value - Last_Value)/(Time_Start - Time_End)
+    #The formula (Last_Value - First_Value)/(Time_End - Time_Start)
     output_dict[output_avg_change] = f'{((output_dict[output_avg_change] - first_value) / (output_dict[output_total_month] - 1)):.2f}'
     
     
